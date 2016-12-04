@@ -1,0 +1,15 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:id="@+id/emuViewFrame"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context="org.codewiz.droid64.view.EmuViewFragment">
+
+    <org.codewiz.droid64.view.GLEmuView
+        android:id="@+id/emuView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:keepScreenOn="true" />
+
+</FrameLayout>

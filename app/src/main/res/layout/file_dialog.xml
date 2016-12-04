@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              tools:context="org.codewiz.droid64.FileDialog">
+
+    <Button
+        android:id="@+id/buttonScan"
+        android:focusable="true"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClickScan"
+        android:text="Re-Scan Disks" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:baselineAligned="false"
+        android:fitsSystemWindows="true"
+        android:orientation="horizontal" >
+
+        <org.codewiz.droid64.view.ObjectListView
+            android:id="@+id/selector_set_list"
+            android:layout_weight="1"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:nextFocusRight="@+id/selector_disk_list"
+            android:nextFocusUp="@+id/buttonScan"
+            android:focusable="true">
+        </org.codewiz.droid64.view.ObjectListView>
+
+        <org.codewiz.droid64.view.ObjectListView
+            android:id="@+id/selector_disk_list"
+            android:layout_weight="3"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:nextFocusLeft="@+id/selector_set_list"
+            android:nextFocusUp="@+id/buttonScan"
+            android:focusable="true">
+        </org.codewiz.droid64.view.ObjectListView>
+
+    </LinearLayout>
+
+
+</LinearLayout>

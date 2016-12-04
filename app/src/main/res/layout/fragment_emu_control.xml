@@ -1,0 +1,164 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:baselineAligned="false"
+    android:fitsSystemWindows="true"
+    android:orientation="horizontal"
+    tools:context=".view.EmuControlFragment">
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:scrollbarStyle="insideOverlay"
+        android:clipToPadding="true"
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/buttonSettings"
+                android:focusable="true"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClickShowSettings"
+                android:text="@string/button_settings_text" />
+
+            <Button
+                android:id="@+id/buttonSelectDisk"
+                android:focusable="true"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClickSelectDisk"
+                android:text="Select Disk..." />
+
+            <Button
+                android:id="@+id/buttonReset"
+                android:focusable="true"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClickReset"
+                android:text="@string/button_reset_text" />
+
+            <Button
+                android:id="@+id/buttonAnyKey"
+                android:focusable="true"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClickAnyKey"
+                android:text="Anykey" />
+
+            <Button
+                android:id="@+id/buttonStoreSnapshot"
+                android:focusable="true"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClickStoreSnapshot"
+                android:text="Store Snapshot" />
+
+            <Button
+                android:id="@+id/buttonRestoreSnapshot"
+                android:focusable="true"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClickRestoreSnapshot"
+                android:text="Restore Last Snapshot" />
+
+            <Button
+                android:id="@+id/buttonPauseResume"
+                android:focusable="true"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClickPauseResume"
+                android:text="Pause/Resume" />
+
+            <Button
+                android:id="@+id/buttonExit"
+                android:focusable="true"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClickExitApp"
+                android:text="Exit App" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:scrollbarStyle="insideOverlay"
+        android:clipToPadding="true"
+        >
+
+        <LinearLayout
+            android:id="@+id/keyButtons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/buttonLoad"
+                android:focusable="true"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClickLoad"
+                android:text="Load" />
+
+            <Button
+                android:id="@+id/buttonRun"
+                android:focusable="true"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClickRun"
+                android:text="Run" />
+
+            <Button
+                android:id="@+id/buttonRunStop"
+                android:focusable="true"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClickRunStop"
+                android:text="@string/button_runstop_text" />
+
+            <Button
+                android:id="@+id/buttonRunStopRestore"
+                android:focusable="true"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClickRunStopRestore"
+                android:text="@string/button_runstoprestore_text" />
+
+            <Button
+                android:id="@+id/buttonShiftRunStop"
+                android:focusable="true"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClickShiftRunStop"
+                android:text="@string/button_shiftrunstop_text" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

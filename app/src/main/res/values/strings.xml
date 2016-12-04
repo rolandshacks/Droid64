@@ -1,0 +1,13 @@
+<resources>
+
+    <string name="app_name">Droid64</string>
+    <string name="button_reset_text">Reset</string>
+    <string name="button_settings_text">Settings...</string>
+    <string name="button_runstop_text">RUN/STOP</string>
+    <string name="button_runstoprestore_text">RUN/STOP\nRESTORE</string>
+    <string name="button_shiftrunstop_text">SHIFT\nRUN/STOP</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

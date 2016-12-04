@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              tools:context="org.codewiz.droid64.SettingsDialog">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbarStyle="insideOverlay"
+        android:clipToPadding="true"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+        <CheckBox
+            android:text="Warp Mode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/enable_warp"/>
+
+        <CheckBox
+            android:text="Drive Emulation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/enable_drive_emulation"/>
+
+        <CheckBox
+            android:text="Swap Joysticks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/enable_swap_joysticks"/>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="15dip"
+            android:focusable="false"
+            android:background="#000000" />
+
+        <CheckBox
+            android:text="Antialiasing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/enable_antialiasing"/>
+
+        <CheckBox
+            android:text="Gamma Correction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/enable_gamma_correction"/>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="15dip"
+            android:focusable="false"
+            android:background="#000000" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="30dip"
+            android:layout_marginRight="10dip"
+            android:addStatesFromChildren="true">
+
+            <TextView
+                android:text="Volume"
+                android:focusable="false"
+                android:gravity="center_vertical|left"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearance"/>
+
+            <SeekBar
+                android:id="@+id/value_audio_volume"
+                android:focusable="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|left"
+                android:max="4"
+                android:progress="4"/>
+
+        </LinearLayout>
+
+        <CheckBox
+            android:text="Audio Reverb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/enable_audio_reverb"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
