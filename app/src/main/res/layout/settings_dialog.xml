@@ -93,6 +93,12 @@
             android:layout_height="wrap_content"
             android:id="@+id/enable_audio_reverb"/>
 
+            <CheckBox
+                android:text="Scan ZIP Files"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/enable_zip_scan"/>
+
         </LinearLayout>
 
     </ScrollView>

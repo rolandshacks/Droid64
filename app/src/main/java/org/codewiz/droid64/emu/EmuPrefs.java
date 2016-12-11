@@ -27,6 +27,7 @@ public class EmuPrefs {
     private boolean textureCompressionEnabled;
     private boolean t64FormatEnabled;
     private boolean prgFormatEnabled;
+    private boolean zipScanEnabled;
     private int audioVolume;
 
     private boolean initializing;
@@ -56,6 +57,7 @@ public class EmuPrefs {
         setT64FormatEnabled(true);
         setPRGFormatEnabled(false);
         setAudioVolumePercent(100);
+        setZipScanEnabled(false);
 
         initializing = false;
     }
@@ -74,6 +76,7 @@ public class EmuPrefs {
         setDriveEmulationEnabled(settings.getBoolean("driveemu", isDriveEmulationEnabled()));
         setJoystickSwapEnabled(settings.getBoolean("joystickswap", isJoystickSwapEnabled()));
         setReverbEnabled(settings.getBoolean("reverb", isReverbEnabled()));
+        setZipScanEnabled(settings.getBoolean("zipscan", isZipScanEnabled()));
 
         int vol = getAudioVolumePercent();
 
@@ -100,6 +103,7 @@ public class EmuPrefs {
         editor.putBoolean("driveemu", isDriveEmulationEnabled());
         editor.putBoolean("joystickswap", isJoystickSwapEnabled());
         editor.putBoolean("reverb", isReverbEnabled());
+        editor.putBoolean("zipscan", isZipScanEnabled());
         editor.putInt("volume", getAudioVolumePercent());
 
         editor.commit();
@@ -230,5 +234,14 @@ public class EmuPrefs {
             emuControl.setAudioVolume(audioVolume);
         }
 
+    }
+
+    public boolean isZipScanEnabled() {
+        return zipScanEnabled;
+    }
+
+    public void setZipScanEnabled(boolean zipScanEnabled) {
+        this.zipScanEnabled = zipScanEnabled;
+        save();
     }
 }

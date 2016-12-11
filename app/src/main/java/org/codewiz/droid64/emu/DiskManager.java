@@ -226,6 +226,7 @@ public class DiskManager {
 	}
 
 	private void scanFolder(File folder) {
+
 		if (null == folder) {
 			return;
 		}
@@ -234,18 +235,27 @@ public class DiskManager {
 			return;
 		}
 
+
+		EmuPrefs prefs = EmuPrefs.instance();
+		final boolean scanZipFiles = (null != prefs) ? prefs.isZipScanEnabled() : false;
+
 		File[] files = folder.listFiles(new FilenameFilter() {
 			@Override
 			public boolean accept(File dir, String name) {
 
-				if (name.toLowerCase().equals("droid64.zip") ||
-					name.toLowerCase().equals("c64.zip")) {
+				if (name.equalsIgnoreCase("droid64.zip") ||
+					name.equalsIgnoreCase("c64.zip")) {
 					return true;
 				}
 
 				//logger.info("FILE: " + name);
 
 				String ext = getFileExtension(name);
+
+				if (scanZipFiles && ext.equalsIgnoreCase("zip")) {
+					return true;
+				}
+
 				return isValidExtension(ext);
 
 			}});
@@ -311,7 +321,6 @@ public class DiskManager {
 	public void invalidateList() {
 		dirty = true;
 	}
-
 
 	public static boolean isValidExtension(String ext) {
 

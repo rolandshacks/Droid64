@@ -100,6 +100,7 @@ public class SettingsDialog extends DialogFragment implements View.OnClickListen
         setItem(view, R.id.enable_swap_joysticks, prefs.isJoystickSwapEnabled());
         setItem(view, R.id.enable_audio_reverb, prefs.isReverbEnabled());
         setItem(view, R.id.enable_gamma_correction, prefs.isGammaCorrectionEnabled());
+        setItem(view, R.id.enable_zip_scan, prefs.isZipScanEnabled());
 
         logger.info("set audio volume slider to " + prefs.getAudioVolumePercent());
         setItem(view, R.id.value_audio_volume, prefs.getAudioVolumePercent());
@@ -171,6 +172,9 @@ public class SettingsDialog extends DialogFragment implements View.OnClickListen
                 break;
             case R.id.enable_gamma_correction:
                 prefs.setGammaCorrectionEnabled(checked);
+                break;
+            case R.id.enable_zip_scan:
+                prefs.setZipScanEnabled(checked);
                 break;
             default:
                 break;

@@ -15,6 +15,16 @@ public class DiskFilter {
     private char endChar;
     private String extension;
     private String label;
+    private IFilter filter;
+
+    public interface IFilter {
+        boolean match(DiskImage img);
+    }
+
+    public DiskFilter(IFilter filter, String label) {
+        this.filter = filter;
+        this.label = label;
+    }
 
     public DiskFilter(char startChar, char endChar, String label) {
         set(startChar, endChar, "", label);
@@ -108,9 +118,19 @@ public class DiskFilter {
     }
 
     public boolean match(DiskImage img) {
-        if (null == img) return false;
+
+        if (null == img) {
+            return false;
+        }
+
         String name = img.getName();
-        if (null == name || name.isEmpty()) return false;
+        if (null == name || name.isEmpty()) {
+            return false;
+        }
+
+        if (null != filter) {
+            return filter.match(img);
+        }
 
         if (null != extension && !extension.isEmpty()) {
             int pos = name.lastIndexOf('.');
@@ -122,7 +142,9 @@ public class DiskFilter {
             }
         }
 
-        if (startChar == 0) return true;
+        if (startChar == 0) {
+            return true;
+        }
 
         String filterStr = name.toLowerCase();
         char c = filterStr.charAt(0);
