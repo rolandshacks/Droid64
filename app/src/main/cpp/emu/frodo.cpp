@@ -3,6 +3,8 @@
  *
  *  Frodo (C) 1994-1997,2002 Christian Bauer
  */
+#include "../emu_bindings.h"
+
 #include "sysdeps.h"
 #include "Version.h"
 
@@ -10,6 +12,7 @@
 #include "Prefs.h"
 
 #include "./frodo.h"
+
 #include "./keycodes.h"
 
 C64 *TheC64 = NULL;     // The C64

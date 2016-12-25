@@ -1,8 +1,14 @@
+/*
+ *
+ *  Emulator bindings
+ *
+ */
+
 #include <stdlib.h>
 #include <memory.h>
 #include <jni.h>
 
-#include "./emu/frodo.h"
+#include "./emu_bindings.h"
 
 static const int rawVideoBufferSize = 0x180 * 0x110 * 4;
 static void* rawVideoBuffer = NULL;
