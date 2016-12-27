@@ -20,7 +20,7 @@ static void* rawAudioBuffer = NULL;
 extern "C"
 {
 
-JNIEXPORT jint JNICALL Java_org_codewiz_droid64_emu_EmuBindings_init(JNIEnv* env, jobject obj, jstring prefs, jint flags)
+JNIEXPORT jint JNICALL Java_emu_NativeInterface_init(JNIEnv* env, jobject obj, jstring prefs, jint flags)
 {
     if (NULL == rawVideoBuffer)
     {
@@ -41,12 +41,12 @@ JNIEXPORT jint JNICALL Java_org_codewiz_droid64_emu_EmuBindings_init(JNIEnv* env
     return result;
 }
 
-JNIEXPORT jint JNICALL Java_org_codewiz_droid64_emu_EmuBindings_input(JNIEnv* env, jobject obj, jint keyCode)
+JNIEXPORT jint JNICALL Java_emu_NativeInterface_input(JNIEnv* env, jobject obj, jint keyCode)
 {
     return emu_input((int) keyCode);
 }
 
-JNIEXPORT jint JNICALL Java_org_codewiz_droid64_emu_EmuBindings_load(JNIEnv* env, jobject obj,
+JNIEXPORT jint JNICALL Java_emu_NativeInterface_load(JNIEnv* env, jobject obj,
                                                                  jint dataType,
                                                                  jbyteArray data,
                                                                  jint dataSize,
@@ -64,7 +64,7 @@ JNIEXPORT jint JNICALL Java_org_codewiz_droid64_emu_EmuBindings_load(JNIEnv* env
     return result;
 }
 
-JNIEXPORT jint JNICALL Java_org_codewiz_droid64_emu_EmuBindings_store(JNIEnv* env, jobject obj,
+JNIEXPORT jint JNICALL Java_emu_NativeInterface_store(JNIEnv* env, jobject obj,
                                                                   jint dataType,
                                                                   jbyteArray data,
                                                                   jint dataSize)
@@ -79,12 +79,12 @@ JNIEXPORT jint JNICALL Java_org_codewiz_droid64_emu_EmuBindings_store(JNIEnv* en
     return result;
 }
 
-JNIEXPORT jint JNICALL Java_org_codewiz_droid64_emu_EmuBindings_command(JNIEnv* env, jobject obj, jint command)
+JNIEXPORT jint JNICALL Java_emu_NativeInterface_command(JNIEnv* env, jobject obj, jint command)
 {
     return emu_command((int) command);
 }
 
-JNIEXPORT jint JNICALL Java_org_codewiz_droid64_emu_EmuBindings_update(JNIEnv* env, jobject obj,
+JNIEXPORT jint JNICALL Java_emu_NativeInterface_update(JNIEnv* env, jobject obj,
                                                                    jint joystickInput,
                                                                    jbyteArray videoOutput,
                                                                    jbyteArray audioOutput,
@@ -102,7 +102,7 @@ JNIEXPORT jint JNICALL Java_org_codewiz_droid64_emu_EmuBindings_update(JNIEnv* e
     return result;
 }
 
-JNIEXPORT jint JNICALL Java_org_codewiz_droid64_emu_EmuBindings_shutdown(JNIEnv* env, jobject obj)
+JNIEXPORT jint JNICALL Java_emu_NativeInterface_shutdown(JNIEnv* env, jobject obj)
 {
     if (rawVideoBuffer)
     {

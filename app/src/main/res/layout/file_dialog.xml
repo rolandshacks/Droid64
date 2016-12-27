@@ -4,7 +4,7 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              tools:context="org.codewiz.droid64.FileDialog">
+              tools:context="ui.FileDialog">
 
     <Button
         android:id="@+id/buttonScan"
@@ -22,7 +22,7 @@
         android:fitsSystemWindows="true"
         android:orientation="horizontal" >
 
-        <org.codewiz.droid64.view.ObjectListView
+        <ui.ObjectListView
             android:id="@+id/selector_set_list"
             android:layout_weight="1"
             android:layout_width="0px"
@@ -30,9 +30,9 @@
             android:nextFocusRight="@+id/selector_disk_list"
             android:nextFocusUp="@+id/buttonScan"
             android:focusable="true">
-        </org.codewiz.droid64.view.ObjectListView>
+        </ui.ObjectListView>
 
-        <org.codewiz.droid64.view.ObjectListView
+        <ui.ObjectListView
             android:id="@+id/selector_disk_list"
             android:layout_weight="3"
             android:layout_width="0px"
@@ -40,7 +40,7 @@
             android:nextFocusLeft="@+id/selector_set_list"
             android:nextFocusUp="@+id/buttonScan"
             android:focusable="true">
-        </org.codewiz.droid64.view.ObjectListView>
+        </ui.ObjectListView>
 
     </LinearLayout>
 

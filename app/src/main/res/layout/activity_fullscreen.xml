@@ -4,10 +4,10 @@
     android:layout_height="match_parent"
     android:orientation="horizontal"
     android:windowSoftInputMode="adjustResize"
-    tools:context="org.codewiz.droid64.FullscreenActivity"
+    tools:context="ui.FullscreenActivity"
     android:imeOptions="actionSend" >
 
-    <fragment android:name="org.codewiz.droid64.view.EmuViewFragment"
+    <fragment android:name="ui.EmuViewFragment"
         android:id="@+id/view_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -15,7 +15,7 @@
         android:focusable="true"
         android:keepScreenOn="true" />
 
-    <fragment android:name="org.codewiz.droid64.view.EmuControlFragment"
+    <fragment android:name="ui.EmuControlFragment"
         android:id="@+id/controls_fragment"
         android:layout_width="wrap_content"
         android:layout_height="match_parent" />

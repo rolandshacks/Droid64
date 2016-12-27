@@ -9,11 +9,7 @@
 #ifdef EMU_BUILD_DLL
     #define DLLBINDING __declspec(dllexport)
 #else
-    #ifdef WIN32
-        #define DLLBINDING __declspec(dllimport)
-    #else
-        #define DLLBINDING /* */
-    #endif
+    #define DLLBINDING /* */
 #endif
 
 extern "C" int DLLBINDING emu_init(const char* prefs, int flags);

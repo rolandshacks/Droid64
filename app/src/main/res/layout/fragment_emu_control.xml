@@ -6,7 +6,7 @@
     android:baselineAligned="false"
     android:fitsSystemWindows="true"
     android:orientation="horizontal"
-    tools:context=".view.EmuControlFragment">
+    tools:context="ui.EmuControlFragment">
 
     <ScrollView
         android:layout_width="wrap_content"
