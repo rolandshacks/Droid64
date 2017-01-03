@@ -30,6 +30,9 @@ public class EmuViewRenderer extends Renderer {
     private int textureWidth = Control.DISPLAY_X;
     private int textureHeight = Control.DISPLAY_Y;
 
+    private ByteBuffer textureUpdateBuffer = null;
+    private int textureUpdateBufferSize = 0;
+
     private int markerTexture;
 
     private DecimalFormat statisticsOutputFormat = new DecimalFormat("0.0");
@@ -59,8 +62,13 @@ public class EmuViewRenderer extends Renderer {
             return;
         }
 
-        ByteBuffer buffer = ByteBuffer.wrap(rawData);
-        buffer.position(0);
+        if (textureUpdateBuffer == null || textureUpdateBufferSize != rawData.length) {
+            textureUpdateBuffer = ByteBuffer.allocate(rawData.length);
+            textureUpdateBufferSize = rawData.length;
+        }
+
+        textureUpdateBuffer.put(rawData);
+        textureUpdateBuffer.position(0);
 
         boolean newTexture = false;
 
@@ -84,9 +92,9 @@ public class EmuViewRenderer extends Renderer {
             int pixelFormat = GL10.GL_RGBA;
 
             if (newTexture) {
-                gl.glTexImage2D(GL10.GL_TEXTURE_2D, 0, internalFormat, textureWidth, textureHeight, 0, pixelFormat, GL10.GL_UNSIGNED_BYTE, buffer);
+                gl.glTexImage2D(GL10.GL_TEXTURE_2D, 0, internalFormat, textureWidth, textureHeight, 0, pixelFormat, GL10.GL_UNSIGNED_BYTE, textureUpdateBuffer);
             } else {
-                gl.glTexSubImage2D(GL10.GL_TEXTURE_2D, 0, 0, 0, textureWidth, textureHeight, pixelFormat, GL10.GL_UNSIGNED_BYTE, buffer);
+                gl.glTexSubImage2D(GL10.GL_TEXTURE_2D, 0, 0, 0, textureWidth, textureHeight, pixelFormat, GL10.GL_UNSIGNED_BYTE, textureUpdateBuffer);
             }
 
         } else {
