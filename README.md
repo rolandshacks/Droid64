@@ -13,6 +13,20 @@ Some facts:
 - Convenient auto-scan functionality
 - Smart-touch interface for using touch screen borders and corners for special functionality
 
+Download
+---------
+
+Download Droid64 releases at
+
+https://github.com/rosc77/Droid64/releases
+
+Wiki
+---------
+
+Read the Droid64 wiki at
+
+https://github.com/rosc77/Droid64/wiki
+
 Copyright
 ---------
 
